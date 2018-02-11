@@ -11,3 +11,19 @@ function reverse(str){
   return str;
 }
 reverse("This is a string");
+
+function reverse(str){
+    str = str.split('');
+    si=0;
+    ei=str.length;
+    while(si<ei){
+      temp = str[si];
+      str[si] = str[ei];
+      str[ei] = temp;
+      ei=ei-1;
+      si=si+1
+    }
+    str = str.join('');
+    return str;
+  }
+  reverse("This is a string");
