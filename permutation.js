@@ -27,13 +27,13 @@ function permutation(str1, str2){
         return "not a permutation";
       }
   }
-  console.log(h1);
+  
   for (var k in h1){
     if (h1[k] !== 0) {
       return "not a permutation";
     }
   } 
-  // console.log(h1)
+ 
   
   return "permutation";
 }
