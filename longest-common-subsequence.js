@@ -28,3 +28,20 @@ function common(str1, str2){
 }
 common('AGGTAB', 'GGGXTXAYB');
 
+function findCommon (str1, str2, i, j){
+  if(str1.length === i || str2.length === j){
+    return "";
+  }
+  if(str1[i] === str2[j]){
+    return str1[i] + findCommon (str1, str2, i+1, j+1);
+  }else{
+    var res1 = findCommon (str1, str2, i+1, j);
+    var res2 = findCommon (str1, str2, i, j+1);
+    if(res1.length > res2.length){
+      return res1;
+    }else{
+      return res2;
+    }
+  }
+}
+findCommon ("AGGTAB", "GXTXAYB", 0, 0);
