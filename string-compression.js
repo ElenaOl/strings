@@ -24,4 +24,30 @@ function compression(str){
  
 }
 
-compression('abcdef'); //a2b1c4a3
+
+
+//other solution with array
+
+function compression(str){
+  
+  var resultStr = [];
+  var count = 1;
+  var current = str[0];
+  for (var i=1; i<=str.length; i++){
+    if(current === str[i]){
+      count += 1;
+    }else{
+      resultStr.push(current + count);
+      current = str[i];
+      count = 1;
+    }
+  }
+  if(str.length <= resultStr.length){
+    return str;
+  }
+  
+  return resultStr.join('');
+ 
+}
+
+compression('aaabbbeeeeeeebb');
